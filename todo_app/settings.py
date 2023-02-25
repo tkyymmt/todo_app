@@ -74,16 +74,26 @@ WSGI_APPLICATION = "todo_app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # 変更
-        'NAME': 'todo_app_db', # プロジェクトで使用するデータベース名
-        'USER': 'root', # パソコンにインストールしたMySQLのユーザー名
-        'PASSWORD': 'password', # 同上。そのパスワード
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tkyymmt$default',
+        'USER': 'tkyymmt',
+        'PASSWORD': 'my_sql_password',
+        'HOST': 'tkyymmt.mysql.pythonanywhere-services.com',
     }
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql', # 変更
+#        'NAME': 'todo_app_db', # プロジェクトで使用するデータベース名
+#        'USER': 'root', # パソコンにインストールしたMySQLのユーザー名
+#        'PASSWORD': 'password', # 同上。そのパスワード
+#        'HOST': 'localhost',
+#        'PORT': '3306',
+#    }
+#}
 
 
 # Password validation
