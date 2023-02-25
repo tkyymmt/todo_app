@@ -84,7 +84,7 @@ DATABASES = {
         'HOST': 'tkyymmt.mysql.pythonanywhere-services.com',
     }
 }
-DATABASE_URI='mysql+mysqlclient://tkyymmt:my_sql_password@tkyymmt.mysql.pythonanywhere-services.com/tkyymmt$default'.format(user='tkyymmt', password='my_sql_password', server='tkyymmt.mysql.pythonanywhere-services.com', database='tkyymmt$default')
+#DATABASE_URI='mysql+mysqlclient://tkyymmt:my_sql_password@tkyymmt.mysql.pythonanywhere-services.com/tkyymmt$default'.format(user='tkyymmt', password='my_sql_password', server='tkyymmt.mysql.pythonanywhere-services.com', database='tkyymmt$default')
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql', # 変更
