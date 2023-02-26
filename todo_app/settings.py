@@ -75,10 +75,14 @@ WSGI_APPLICATION = "todo_app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-import environ
-env = environ.Env()
 DATABASES = {
-    'default': env.db_url("mysql://tkyymmt:my_sql_password@tkyymmt.mysql.pythonanywhere-services.com/tkyymmt$default")
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tkyymmt$default',
+        'USER': 'tkyymmt',
+        'PASSWORD': 'my_sql_password',
+        'HOST': 'tkyymmt.mysql.pythonanywhere-services.com',
+    }
 }
 
 # Password validation
