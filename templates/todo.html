@@ -4,8 +4,31 @@
 {% block title %}Todo{% endblock %}
 
 {% block content %}
+
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+  <p>Hi {{ user.username }}!</p>
+
+  <form action="/todo/add" method="POST">
+    {% csrf_token %}
+    <input name="title" placeholder="Enter todo here...">
+    <button type="submit">ADD</button>
+  </form>
+
+  <p>Todo List</p>
+  <ul>
+    {% for todo in todos %}
+    <li>
+      {{ todo.title }}
+      <form action="/todo/delete/{{ todo.id }}"
+            style="display: inline;"
+            method="POST">
+        {% csrf_token %}
+        <button type="submit">DONE</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+
   <p><a href="{% url 'logout' %}">Log Out</a></p>
 {% else %}
   <p>You are not logged in</p>
