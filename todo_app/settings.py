@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-wm-ma_7xv&n5$w(dgzdvmsdozl$bz#&cj_i!@&a#^lwh9%2w$_"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -75,26 +75,11 @@ WSGI_APPLICATION = "todo_app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+import environ
+env = environ.Env()
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # 変更
-        'NAME': 'todo_app_db', # プロジェクトで使用するデータベース名
-        'USER': 'root', # パソコンにインストールしたMySQLのユーザー名
-        'PASSWORD': 'password', # 同上。そのパスワード
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default': env.db_url("mysql://tkyymmt:my_sql_password@tkyymmt.mysql.pythonanywhere-services.com/tkyymmt$default")
 }
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'tkyymmt$default',
-#        'USER': 'tkyymmt',
-#        'PASSWORD': 'my_sql_password',
-#        'HOST': 'tkyymmt.mysql.pythonanywhere-services.com',
-#    }
-#}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
