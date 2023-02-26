@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "accounts",
+    "todo",
 ]
 
 MIDDLEWARE = [
@@ -74,25 +75,23 @@ WSGI_APPLICATION = "todo_app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tkyymmt$default',
-        'USER': 'tkyymmt',
-        'PASSWORD': 'my_sql_password',
-        'HOST': 'tkyymmt.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.mysql', # 変更
+        'NAME': 'todo_app_db', # プロジェクトで使用するデータベース名
+        'USER': 'root', # パソコンにインストールしたMySQLのユーザー名
+        'PASSWORD': 'password', # 同上。そのパスワード
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
-#DATABASE_URI='mysql+mysqlclient://tkyymmt:my_sql_password@tkyymmt.mysql.pythonanywhere-services.com/tkyymmt$default'.format(user='tkyymmt', password='my_sql_password', server='tkyymmt.mysql.pythonanywhere-services.com', database='tkyymmt$default')
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.mysql', # 変更
-#        'NAME': 'todo_app_db', # プロジェクトで使用するデータベース名
-#        'USER': 'root', # パソコンにインストールしたMySQLのユーザー名
-#        'PASSWORD': 'password', # 同上。そのパスワード
-#        'HOST': 'localhost',
-#        'PORT': '3306',
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'tkyymmt$default',
+#        'USER': 'tkyymmt',
+#        'PASSWORD': 'my_sql_password',
+#        'HOST': 'tkyymmt.mysql.pythonanywhere-services.com',
 #    }
 #}
 
@@ -138,5 +137,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/" 
+LOGIN_REDIRECT_URL = "/todo/"
+LOGOUT_REDIRECT_URL = "/accounts/login/" 
